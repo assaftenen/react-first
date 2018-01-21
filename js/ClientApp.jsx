@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { render } from "react-dom";
 
 const ce = React.createElement;
@@ -15,7 +15,7 @@ const MyFirstComponent = function() {
     ce(MyTitle, { title: "Game of Thrones", color: "YellowGreen" }),
     ce(MyTitle, { title: "Stranger Things", color: "GreenYellow" }),
     ce(MyTitle, { title: "Rick and Morty", color: "LimeGreen" }),
-    ce(MyTitle, { title: "Silicon vally", color: "Lime" })
+    ce(MyTitle, { title: "house of the fucking  vally", color: "Lime" })
   ]);
 };
 render(ce(MyFirstComponent), document.getElementById("app"));
