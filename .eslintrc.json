@@ -18,5 +18,6 @@
       "es6": true,
       "browser": true,
       "node": true
-    }
+    },
+   "eslint linebreak-style": ["error", "windows"]
   }

@@ -1,21 +1,19 @@
 import React from "react";
 import { render } from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Landing } from "./landing";
+import { Search } from "./search";
 
-const ce = React.createElement;
-const MyTitle = function(props) {
-  return ce(
-    "div",
-    null,
-    ce("h1", { style: { color: props.color } }, props.title)
-  );
-};
-
-const MyFirstComponent = function() {
-  return ce("div", { id: "my-first-component" }, [
-    ce(MyTitle, { title: "Game of Thrones", color: "YellowGreen" }),
-    ce(MyTitle, { title: "Stranger Things", color: "GreenYellow" }),
-    ce(MyTitle, { title: "Rick and Morty", color: "LimeGreen" }),
-    ce(MyTitle, { title: "house of the fucking  vally", color: "Lime" })
-  ]);
-};
-render(ce(MyFirstComponent), document.getElementById("app"));
+const FourOhFour = () => <h1>404</h1>;
+const App = () => (
+  <BrowserRouter>
+    <div className="app">
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/search" component={Search} />
+        <Route component={FourOhFour} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
+render(<App />, document.getElementById("app"));
